@@ -1,5 +1,5 @@
 <?php 
-$ip = "192.168.30.101";
+$ip = "ip.addr";
 $db = "login";
 $user = "root";
 $pass = "122109F";
