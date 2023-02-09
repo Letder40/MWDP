@@ -1,21 +1,19 @@
 #!/bin/bash
-wordpress=$( docker container ls | grep "" )
-
 if [[ $1 == "start" ]]; then 
    arg=$1
    echo;
-   echo -ne " Inicializando dockers .   \r" && sleep 1
-   echo -ne " Inicializando dockers ..  \r" && sleep 1
-   echo -ne " Inicializando dockers ... \r" && sleep 1
+   echo -ne " Inicializando dockers .   \r" && sleep 0.5
+   echo -ne " Inicializando dockers ..  \r" && sleep 0.5
+   echo -ne " Inicializando dockers ... \r" && sleep 0.5
    echo;  
 fi
 
 if [[ $1 == "stop" ]]; then 
    arg=$1
    echo;
-   echo -ne " Parando servicios de docker.   \r" && sleep 1
-   echo -ne " Parando servicios de docker..  \r" && sleep 1
-   echo -ne " Parando servicios de docker... \r" && sleep 1
+   echo -ne " Parando servicios de docker.   \r" && sleep 0.5
+   echo -ne " Parando servicios de docker..  \r" && sleep 0.5
+   echo -ne " Parando servicios de docker... \r" && sleep 0.5
    echo;  
 fi
 
@@ -25,12 +23,12 @@ if [[ $arg == "" ]]; then
    exit 1
 fi
 
-   cd /root/wordpress-docker
+   cd ./wordpress-docker
    docker-compose $arg  
 
-   cd /root/login-docker
+   cd ./login-docker
    docker-compose $arg
 
-   cd /root/registro-docker
+   cd ./registro-docker
    docker-compose $arg
 
