@@ -21,10 +21,6 @@ if [[ $1 == "build" ]]; then
    arg=$1
 fi
 
-if [[ $1 == "up" ]]; then
-   arg=$1
-fi
-
 if [[ $arg == "" ]]; then
    echo " Usa { autodocker start } para lanzar todos los servicios"
    echo " Usa { autodocker stop } para parar todos los servicios"
