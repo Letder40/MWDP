@@ -14,9 +14,8 @@
 
 
 $ip_pub = "ip_pub.addr";
-$headers = getallheaders();
 
-if($headers["Logged_in"] != true){
+if($_SERVER["HTTP_REFERER"] != "http://$ip_pub:8080/"){
     header("Location: http://$ip_pub:8080");
     die();
 }
