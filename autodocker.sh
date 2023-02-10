@@ -18,7 +18,7 @@ if [[ $1 == "stop" ]]; then
 fi
 
 if [[ $1 == "build" ]]; then 
-   $arg=$1
+   arg=$1
 fi
 
 if [[ $arg == "" ]]; then
