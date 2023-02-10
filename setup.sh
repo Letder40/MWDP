@@ -12,7 +12,7 @@ cat ./login-docker/public_html/db.php | sed "s/ip.addr/$ip/g" | sponge ./login-d
 cat ./login-docker/public_html/index.php | sed "s/ip_pub.addr/$ip_pub/g" | sponge ./login-docker/public_html/index.php
 
 cat ./registro-docker/public_html/db.php | sed "s/ip.addr/$ip/g" | sponge ./registro-docker/public_html/db.php
-cat ./registro-docker/public_html/db.php | sed "s/ip_pub.addr/$ip_pub/g" | sponge ./registro-docker/public_html/index.php 
+cat ./registro-docker/public_html/index.php | sed "s/ip_pub.addr/$ip_pub/g" | sponge ./registro-docker/public_html/index.php 
 
 cat ./wordpress-docker/public_html/wp-config.php | sed "s/ip.addr/$ip/g" | sponge ./wordpress-docker/public_html/wp-config.php
 cat ./wordpress-docker/public_html/wp-config.php | sed "s/ip_pub.addr/$ip_pub/g" | sponge ./wordpress-docker/public_html/wp-config.php
@@ -21,13 +21,13 @@ bash autodocker.sh build
 
 
 cd ./wordpress-docker/ 
-docker-compose up 
+docker-compose up --no-start 
 
 cd ../login-docker
-docker-compose up 
+docker-compose up --no-start
 
 cd ../registro-docker 
-docker-compose up 
+docker-compose up --no-start
 
 cd ..
 bash autodocker.sh start 
