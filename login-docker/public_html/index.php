@@ -2,6 +2,7 @@
 include "db.php";
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
 
+$ip_pub = "ip_pub.addr"
 $title = "Login";
 $username = $_POST["username"];
 $password = $_POST["password"];
@@ -44,7 +45,7 @@ if(password_verify($password, $savedPassword)){
             </div>
             <div id="form-object3" class="default-flex">
                 <input type="submit" value="login">
-                <input type="button" value="registrarme" onclick='location.href = "http:/\/<?php echo $ip ?>:8081" '>
+                <input type="button" value="registrarme" onclick='location.href = "http:/\/<?php echo $ip_pub ?>:8081" '>
             </div>
         </form>
     </div>

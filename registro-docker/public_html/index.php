@@ -1,5 +1,6 @@
 <?php 
 include "db.php";
+$ip_pub = "ip_pub.addr"
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
     
 
@@ -16,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
     $stmt->bindParam(":password", $encrypted_password);
     $stmt->execute();
     
-    header("Location: http://192.168.30.101:8080");
+    header("Location: http://$ip_pub:8080");
     
     }catch(PDOExepion $e){
         die("Error: $e");
@@ -46,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
                 </div>
                 <div id="form-object3" class="default-flex">
                     <input type="submit" value="registrarme">
-                    <input type="button" value="ir a login" onclick='location.href = "http:/\/<?php echo $ip ?>:8080" '>
+                    <input type="button" value="ir a login" onclick='location.href = "http:/\/<?php echo $ip_pub ?>:8080" '>
                 </div>
             </form>
         </div>
