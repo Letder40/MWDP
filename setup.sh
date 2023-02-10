@@ -17,14 +17,14 @@ docker-compose up &
 sleep 4
 kill $!
 
-cd ./login-docker
+cd ../login-docker
 docker-compose up &
 sleep 4
 kill $! 
 
-cd ./registro-docker 
+cd ../registro-docker 
 docker-compose up &
 sleep 4
 kill $!
 
-bash autodocker.sh start
+bash ../autodocker.sh start
