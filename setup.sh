@@ -35,4 +35,4 @@ mysqlID=$(docker container ls | grep "mysql" | awk '{print $1}')
 docker cp ./databases.sql $mysqlID:/databases.sql  
 docker exec -it $mysqlID mysql -u root -p -e "source databases.sql;"
 
-
+clear && echo "El entorno de trabajo esta listo para el escaneo"

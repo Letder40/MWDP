@@ -1,8 +1,7 @@
 <?php 
+$ip_pub = "ip_pub.addr";
 include "db.php";
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
-
-$ip_pub = "ip_pub.addr";
 $title = "Login";
 $username = $_POST["username"];
 $password = $_POST["password"];
@@ -13,7 +12,7 @@ $stmt->execute();
 $data = $stmt->fetchAll();
 $savedPassword = $data[0]["password"];
 if(password_verify($password, $savedPassword)){
-    header("Location: http://$ip:80");
+    header("Location: http://$ip_pub:80");
 }else{
     $errorText = "Credenciales invalidas";
 }
