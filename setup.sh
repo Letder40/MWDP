@@ -27,4 +27,5 @@ docker-compose up &
 sleep 4
 kill $!
 
-bash ../autodocker.sh start
+cd ..
+bash autodocker.sh start
