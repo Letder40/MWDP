@@ -1,12 +1,4 @@
 <?php
-$ip_pub = "ip_pub.addr";
-session_start();
-$logged_in = $_SESSION["logged_in"];
-
-if($logged_in != true){
-    header("Location: http://$ip_pub:8080");
-}
-
 /**
  * Front to the WordPress application. This file doesn't do anything, but loads
  * wp-blog-header.php which does and tells WordPress to load the theme.
@@ -19,7 +11,20 @@ if($logged_in != true){
  *
  * @var bool
  */
+
+
+
+$ip_pub = "ip_pub.addr";
+session_start();
+$logged_in = $_SESSION["logged_in"];
+
+if($logged_in != true){
+    header("Location: http://$ip_pub:8080");
+    die();
+}
+
 define( 'WP_USE_THEMES', true );
 
 /** Loads the WordPress Environment and Template */
 require __DIR__ . '/wp-blog-header.php';
+
