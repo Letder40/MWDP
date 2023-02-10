@@ -14,7 +14,7 @@ bash autodocker.sh build
 
 cd ./wordpress-docker/ 
 docker-compose up &
-sleep 4
+sleep 12
 kill $!
 
 cd ../login-docker
