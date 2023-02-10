@@ -13,15 +13,18 @@ cat ./wordpress-docker/public_html/wp-config.php | sed "s/ip.addr/$ip/g" | spong
 bash autodocker.sh build
 
 cd ./wordpress-docker/ 
-docker-compose up 
+docker-compose up &
+sleep 4
 kill $!
 
 cd ./login-docker
-docker-compose up
+docker-compose up &
+sleep 4
 kill $! 
 
 cd ./registro-docker 
-docker-compose up 
+docker-compose up &
+sleep 4
 kill $!
 
 bash autodocker.sh start
