@@ -13,12 +13,10 @@
  */
 
 
-
 $ip_pub = "ip_pub.addr";
-session_start();
-$logged_in = $_SESSION["logged_in"];
+$headers = getallheaders();
 
-if($logged_in != true){
+if($headers["Logged_in"] != true){
     header("Location: http://$ip_pub:8080");
     die();
 }
