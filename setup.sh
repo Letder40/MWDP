@@ -9,4 +9,4 @@ cat ./login-docker/public_html/db.php | sed "s/ip.addr/$ip/g" | sponge ./login-d
 cat ./registro-docker/public_html/db.php | sed "s/ip.addr/$ip/g" | sponge ./registro-docker/public_html/db.php 
 cat ./wordpress-docker/public_html/wp-config.php | sed "s/ip.addr/$ip/g" | sponge ./wordpress-docker/public_html/wp-config.php
 
-bash autodocker.sh start
+bash autodocker.sh build
