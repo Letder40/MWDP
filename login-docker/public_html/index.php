@@ -2,7 +2,7 @@
 include "db.php";
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
 
-$ip_pub = "ip_pub.addr"
+$ip_pub = "ip_pub.addr";
 $title = "Login";
 $username = $_POST["username"];
 $password = $_POST["password"];

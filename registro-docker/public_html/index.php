@@ -1,6 +1,6 @@
 <?php 
 include "db.php";
-$ip_pub = "ip_pub.addr"
+$ip_pub = "ip_pub.addr";
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
     
 
