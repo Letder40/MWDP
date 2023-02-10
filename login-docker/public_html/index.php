@@ -12,7 +12,11 @@ $stmt->execute();
 $data = $stmt->fetchAll();
 $savedPassword = $data[0]["password"];
 if(password_verify($password, $savedPassword)){
+    session_start();
+    $_SESSION["username"] = $username;
+    $_SESSION["Logged_in"] = true;
     header("Location: http://$ip_pub:80");
+    die();
 }else{
     $errorText = "Credenciales invalidas";
 }

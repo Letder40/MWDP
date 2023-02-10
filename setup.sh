@@ -16,6 +16,7 @@ cat ./registro-docker/public_html/index.php | sed "s/ip_pub.addr/$ip_pub/g" | sp
 
 cat ./wordpress-docker/public_html/wp-config.php | sed "s/ip.addr/$ip/g" | sponge ./wordpress-docker/public_html/wp-config.php
 cat ./wordpress-docker/public_html/wp-config.php | sed "s/ip_pub.addr/$ip_pub/g" | sponge ./wordpress-docker/public_html/wp-config.php
+cat ./wordpress-docker/public_html/index.php | sed "s/ip_pub.addr/$ip_pub/g" | sponge ./wordpress-docker/public_html/index.php 
 
 bash autodocker.sh build
 

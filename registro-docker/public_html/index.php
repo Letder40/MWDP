@@ -18,6 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
     $stmt->execute();
     
     header("Location: http://$ip_pub:8080");
+    die();
     
     }catch(PDOExepion $e){
         die("Error: $e");
