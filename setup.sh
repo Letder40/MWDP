@@ -28,4 +28,8 @@ sleep 4
 kill $!
 
 cd ..
-bash autodocker.sh start
+bash autodocker.sh start 
+mysqlID=$(docker container ls | grep "mysql" | awk '{print $1}')
+docker cp ./databases.sql $mysqlID:/databases.sql  
+docker exec -it $mysqlID mysql -u root -p -e "source databases.sql;"
+
