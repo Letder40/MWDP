@@ -9,6 +9,7 @@ $password = $_POST["password"];
 $stmt = $conn->prepare("SELECT username,password from users where username = :username");
 $stmt->bindParam(":username", $username);
 $stmt->execute();
+
 $data = $stmt->fetchAll();
 $savedPassword = $data[0]["password"];
 if(password_verify($password, $savedPassword)){
