@@ -2,6 +2,7 @@
 apt update -y
 apt install docker -y 
 apt install docker-compose -y
+apt install xclip -y
 apt install moreutils -y
 clear
 
