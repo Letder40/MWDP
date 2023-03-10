@@ -10,8 +10,8 @@ apt install apache2 -y
 systemctl start apache2 && systemctl enable apache2
 
 git clone --depth 1 https://github.com/afaqurk/linux-dash.git
-mkdir /var/www/html/linux-dash
-ln -s /var/www/html/linux-dash linux-dash/app
+cpath=$(pwd)
+ln -s $cpath/linux-dash/app /var/www/html/linux-dash
 
 clear
 
