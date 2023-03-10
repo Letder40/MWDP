@@ -4,7 +4,10 @@ apt install docker -y
 apt install docker-compose -y
 apt install xclip -y
 apt install moreutils -y
-apt install git -y 
+apt install git -y
+apt install apache2 -y
+
+systemctl start apache2 && systemctl enable apache2
 
 git clone --depth 1 https://github.com/afaqurk/linux-dash.git
 mkdir /var/www/html/linux-dash
