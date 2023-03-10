@@ -8,7 +8,7 @@ apt install git -y
 apt install apache2 -y
 
 systemctl start apache2 && systemctl enable apache2
-
+rm /var/www/html/index.html
 git clone --depth 1 https://github.com/afaqurk/linux-dash.git
 cpath=$(pwd)
 ln -s $cpath/linux-dash/app /var/www/html/linux-dash
@@ -25,6 +25,7 @@ cat ./registro-docker/public_html/db.php | sed "s/ip.addr/$ip/g" | sponge ./regi
 cat ./registro-docker/public_html/index.php | sed "s/ip_pub.addr/$ip_pub/g" | sponge ./registro-docker/public_html/index.php 
 
 
+echo "<?php header('Location: $ip_pub/linux-dash')" > /var/www/html/index.php
 bash autodocker.sh build
 
 
