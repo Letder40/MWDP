@@ -27,10 +27,7 @@ if [[ $arg == "" ]]; then
    exit 1
 fi
 
-   cd ./wordpress-docker
-   docker-compose $arg  
-
-   cd ../login-docker
+   cd ./login-docker
    docker-compose $arg
 
    cd ../registro-docker
