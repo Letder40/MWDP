@@ -4,6 +4,12 @@ apt install docker -y
 apt install docker-compose -y
 apt install xclip -y
 apt install moreutils -y
+apt install git -y 
+
+git clone --depth 1 https://github.com/afaqurk/linux-dash.git
+mkdir /var/www/html/linux-dash
+ln -s /var/www/html/linux-dash linux-dash/app
+
 clear
 
 ip=$(ip a | grep "eth0" | grep -oP "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" | grep -v ".255")
@@ -15,9 +21,6 @@ cat ./login-docker/public_html/index.php | sed "s/ip_pub.addr/$ip_pub/g" | spong
 cat ./registro-docker/public_html/db.php | sed "s/ip.addr/$ip/g" | sponge ./registro-docker/public_html/db.php
 cat ./registro-docker/public_html/index.php | sed "s/ip_pub.addr/$ip_pub/g" | sponge ./registro-docker/public_html/index.php 
 
-cat ./wordpress-docker/public_html/wp-config.php | sed "s/ip.addr/$ip/g" | sponge ./wordpress-docker/public_html/wp-config.php
-cat ./wordpress-docker/public_html/wp-config.php | sed "s/ip_pub.addr/$ip_pub/g" | sponge ./wordpress-docker/public_html/wp-config.php
-cat ./wordpress-docker/public_html/index.php | sed "s/ip_pub.addr/$ip_pub/g" | sponge ./wordpress-docker/public_html/index.php 
 
 bash autodocker.sh build
 
