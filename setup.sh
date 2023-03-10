@@ -28,9 +28,6 @@ cat ./registro-docker/public_html/index.php | sed "s/ip_pub.addr/$ip_pub/g" | sp
 bash autodocker.sh build
 
 
-cd ./wordpress-docker/ 
-docker-compose up --no-start 
-
 cd ../login-docker
 docker-compose up --no-start
 
