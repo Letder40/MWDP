@@ -14,7 +14,7 @@ $data = $stmt->fetchAll();
 $savedPassword = $data[0]["password"];
 if(password_verify($password, $savedPassword)){
     header("Logged_in: true");
-    header("Location: http://$ip_pub:80");
+    header("Location: http://$ip_pub/linux-dash:80");
     die();
 }else{
     $errorText = "Credenciales invalidas";
